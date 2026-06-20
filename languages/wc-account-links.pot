@@ -1,0 +1,180 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WC My Account Links\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 15:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.5; wp-7.0; php-8.3.30\n"
+"X-Domain: wc-account-links"
+
+#. %s: plugin name
+#: woocommerce-my-account-links.php:139
+msgid ""
+"<strong>WC My Account Links</strong> requires WooCommerce to be installed "
+"and active. Please install or activate WooCommerce to use this plugin."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:436
+msgid "Actions"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:267
+msgid ""
+"All customisations have been cleared. WooCommerce default My Account "
+"navigation is now restored."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:122
+msgid ""
+"Are you sure you want to reset all settings to WooCommerce defaults? This "
+"cannot be undone."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:397
+msgid "Control the navigation links shown in WooCommerce My Account pages."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:430
+msgid "Custom Label"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:532
+msgid "Custom label"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:328
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:464
+msgid ""
+"Drag rows to reorder. Toggle the switch to show/hide items. Enter a custom "
+"label to rename."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:123
+#: includes/class-mj-wc-account-links-admin.php:499
+msgid "Drag to reorder"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:505
+msgid "Enable item"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:427
+msgid "Endpoint"
+msgstr ""
+
+#: woocommerce-my-account-links.php:182
+msgid "Go to Plugins"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://mjkhajeh.ir"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://wordpress.org/plugins/wc-my-account-links/"
+msgstr ""
+
+#: woocommerce-my-account-links.php:165
+msgid "Install WooCommerce"
+msgstr ""
+
+#. Author of the plugin
+msgid "MohammadJafar Khajeh"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:75
+#: includes/class-mj-wc-account-links-admin.php:76
+#: includes/class-mj-wc-account-links-admin.php:394
+msgid "My Account Links"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:449
+msgid ""
+"No WooCommerce My Account menu items found. Make sure WooCommerce is fully "
+"configured."
+msgstr ""
+
+#. Description of the plugin
+msgid "Remove, rename, and reorder WooCommerce My Account navigation links."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:407
+msgid "Reset All Defaults"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:550
+msgid "Reset label"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:547
+msgid "Reset to WooCommerce default label"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:256
+msgid "Save failed"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:468
+msgid "Save Settings"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:149
+#: includes/class-mj-wc-account-links-admin.php:209
+msgid "Security check failed. Please try again."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:266
+msgid "Settings reset"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:249
+msgid "Settings saved"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:257
+msgid ""
+"There was a problem saving your settings. Please try again. If the issue "
+"persists, check your server error log."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:424
+msgid "Visible"
+msgstr ""
+
+#. Name of the plugin
+msgid "WC My Account Links"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:433
+msgid "WooCommerce Default"
+msgstr ""
+
+#: woocommerce-my-account-links.php:132
+msgid "WooCommerce is required"
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:349
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:141
+#: includes/class-mj-wc-account-links-admin.php:202
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/class-mj-wc-account-links-admin.php:250
+msgid ""
+"Your My Account navigation has been updated and is now live on the frontend."
+msgstr ""

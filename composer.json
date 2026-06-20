@@ -1,0 +1,20 @@
+{
+    "name": "mjkhajeh/wc-my-account-links",
+    "description": "Remove, rename, and reorder WooCommerce My Account navigation links.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "MJ\\WC_Account_Links\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "MohammadJafar Khajeh",
+            "email": "mjkhajehg@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    }
+}

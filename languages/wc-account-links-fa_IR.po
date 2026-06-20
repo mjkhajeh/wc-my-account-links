@@ -1,0 +1,192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WC My Account Links\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-20 15:26+0000\n"
+"PO-Revision-Date: 2026-06-20 15:35+0000\n"
+"Last-Translator: دکتر پلاس\n"
+"Language-Team: فارسی\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.5; wp-7.0; php-8.3.30\n"
+"X-Domain: wc-account-links"
+
+#. %s: plugin name
+#: woocommerce-my-account-links.php:139
+msgid ""
+"<strong>WC My Account Links</strong> requires WooCommerce to be installed "
+"and active. Please install or activate WooCommerce to use this plugin."
+msgstr ""
+"افزونه <strong>لینک‌های حساب کاربری ووکامرس</strong> به ووکامرس نیاز دارد. "
+"لطفا از بخش افزونه‌ها اقدام به نصب و فعال‌سازی ووکامرس کنید."
+
+#: includes/class-mj-wc-account-links-admin.php:436
+msgid "Actions"
+msgstr "عملیات"
+
+#: includes/class-mj-wc-account-links-admin.php:267
+msgid ""
+"All customisations have been cleared. WooCommerce default My Account "
+"navigation is now restored."
+msgstr "همه سفارشی‌سازی‌ها حذف شدند و تنظیمات به حالت اولیه برگشت."
+
+#: includes/class-mj-wc-account-links-admin.php:122
+msgid ""
+"Are you sure you want to reset all settings to WooCommerce defaults? This "
+"cannot be undone."
+msgstr ""
+"آیا از بازگردانی تغییرات به حالت اولیه اطمینان دارید؟ این کار غیرقابل برگشت "
+"است."
+
+#: includes/class-mj-wc-account-links-admin.php:397
+msgid "Control the navigation links shown in WooCommerce My Account pages."
+msgstr "مدیریت لینک‌های منو در صفحه حساب کاربری ووکامرس."
+
+#: includes/class-mj-wc-account-links-admin.php:430
+msgid "Custom Label"
+msgstr "متن دلخواه"
+
+#: includes/class-mj-wc-account-links-admin.php:532
+msgid "Custom label"
+msgstr "متن دلخواه"
+
+#: includes/class-mj-wc-account-links-admin.php:328
+msgid "Dismiss this notice"
+msgstr "حذف پیام"
+
+#: includes/class-mj-wc-account-links-admin.php:464
+msgid ""
+"Drag rows to reorder. Toggle the switch to show/hide items. Enter a custom "
+"label to rename."
+msgstr ""
+"برای تغییر ترتیب آیتم‌ها، ردیف ها را گرفته و جابجا کنید. برای نمایش یا مخفی "
+"کردن آیتم‌ها روی دکمه مربوطه کلیک کنید. برای تغییر نام به متن دلخواه خود، "
+"متن را در فیلد وارد کنید."
+
+#: includes/class-mj-wc-account-links-admin.php:123
+#: includes/class-mj-wc-account-links-admin.php:499
+msgid "Drag to reorder"
+msgstr "برای ترتیب‌بندی بکشید"
+
+#: includes/class-mj-wc-account-links-admin.php:505
+msgid "Enable item"
+msgstr "فعال‌سازی آیتم"
+
+#: includes/class-mj-wc-account-links-admin.php:427
+msgid "Endpoint"
+msgstr "نقطه پایانی"
+
+#: woocommerce-my-account-links.php:182
+msgid "Go to Plugins"
+msgstr "رفتن به افزونه‌ها"
+
+#. Author URI of the plugin
+msgid "https://mjkhajeh.ir"
+msgstr "https://mjkhajeh.ir"
+
+#. URI of the plugin
+msgid "https://wordpress.org/plugins/wc-my-account-links/"
+msgstr "https://wordpress.org/plugins/wc-my-account-links/"
+
+#: woocommerce-my-account-links.php:165
+msgid "Install WooCommerce"
+msgstr "نصب ووکامرس"
+
+#. Author of the plugin
+msgid "MohammadJafar Khajeh"
+msgstr "محمدجعفر خواجه"
+
+#: includes/class-mj-wc-account-links-admin.php:75
+#: includes/class-mj-wc-account-links-admin.php:76
+#: includes/class-mj-wc-account-links-admin.php:394
+msgid "My Account Links"
+msgstr "لینک‌های حساب کاربری"
+
+#: includes/class-mj-wc-account-links-admin.php:449
+msgid ""
+"No WooCommerce My Account menu items found. Make sure WooCommerce is fully "
+"configured."
+msgstr ""
+"هیچ لینکی برای حساب کاربری یافت نشد. مطمئن شوید که ووکامرس به درستی پیکربندی "
+"شده است."
+
+#. Description of the plugin
+msgid "Remove, rename, and reorder WooCommerce My Account navigation links."
+msgstr "حذف، تغییر متن و تغییر جایگاه آیتم‌ها در منو صفحه حساب کاربری ووکامرس."
+
+#: includes/class-mj-wc-account-links-admin.php:407
+msgid "Reset All Defaults"
+msgstr "بازگردانی همه تنظیمات به پیشفرض"
+
+#: includes/class-mj-wc-account-links-admin.php:550
+msgid "Reset label"
+msgstr "بازگردانی به پیشفرض"
+
+#: includes/class-mj-wc-account-links-admin.php:547
+msgid "Reset to WooCommerce default label"
+msgstr "بازگردانی به متن‌های پیشفرض ووکامرس"
+
+#: includes/class-mj-wc-account-links-admin.php:256
+msgid "Save failed"
+msgstr "ذخیره با خطا مواجه شد"
+
+#: includes/class-mj-wc-account-links-admin.php:468
+msgid "Save Settings"
+msgstr "ذخیره تنظیمات"
+
+#: includes/class-mj-wc-account-links-admin.php:149
+#: includes/class-mj-wc-account-links-admin.php:209
+msgid "Security check failed. Please try again."
+msgstr "خطا امنیتی، لطفا مجدد تلاش کنید."
+
+#: includes/class-mj-wc-account-links-admin.php:266
+msgid "Settings reset"
+msgstr "تنظیمات بازگردانی شد"
+
+#: includes/class-mj-wc-account-links-admin.php:249
+msgid "Settings saved"
+msgstr "تنظیمات ذخیره شد"
+
+#: includes/class-mj-wc-account-links-admin.php:257
+msgid ""
+"There was a problem saving your settings. Please try again. If the issue "
+"persists, check your server error log."
+msgstr ""
+"خطایی هنگام ذخیره رخ داد. لطفا مجدد تلاش کنید. در صورتی که مجدد خطا داشت "
+"فایل لاگ‌های خطای هاست یا سایت خود را چک کنید."
+
+#: includes/class-mj-wc-account-links-admin.php:424
+msgid "Visible"
+msgstr "نمایان"
+
+#. Name of the plugin
+msgid "WC My Account Links"
+msgstr "لینک‌های حساب کاربری ووکامرس"
+
+#: includes/class-mj-wc-account-links-admin.php:433
+msgid "WooCommerce Default"
+msgstr "پیشفرض ووکامرس"
+
+#: woocommerce-my-account-links.php:132
+msgid "WooCommerce is required"
+msgstr "افزونه ووکامرس نیاز است"
+
+#: includes/class-mj-wc-account-links-admin.php:349
+msgid "You do not have permission to access this page."
+msgstr "شما اجازه دسترسی به این صفحه را ندارید."
+
+#: includes/class-mj-wc-account-links-admin.php:141
+#: includes/class-mj-wc-account-links-admin.php:202
+msgid "You do not have permission to perform this action."
+msgstr "شما مجاز به انجام این عملیات نیستید."
+
+#: includes/class-mj-wc-account-links-admin.php:250
+msgid ""
+"Your My Account navigation has been updated and is now live on the frontend."
+msgstr ""
+"تغییرات منو صفحه حساب کاربری با موفقیت انجام شد و می‌توانید در سایت تغییرات "
+"را مشاهده کنید."

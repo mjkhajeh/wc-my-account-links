@@ -1,0 +1,526 @@
+/* =====================================================================
+   RESET / BASE
+   ===================================================================== */
+.mj-wc-al-wrap *,
+.mj-wc-al-wrap *::before,
+.mj-wc-al-wrap *::after {
+	box-sizing: border-box;
+}
+
+.mj-wc-al-wrap {
+	color: #1d2327;
+	max-inline-size: 1100px;
+	margin-inline: auto;
+	padding-block-end: 80px; /* space for sticky save bar */
+}
+
+/* =====================================================================
+   PAGE HEADER
+   ===================================================================== */
+.mj-wc-al-header {
+	background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #7c3aed 100%);
+	border-radius: 12px;
+	margin-block: 20px 24px;
+	box-shadow: 0 4px 24px rgba(124, 58, 237, 0.25);
+}
+
+.mj-wc-al-header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-block: 24px;
+	padding-inline: 32px;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.mj-wc-al-header__icon {
+	font-size: 40px !important;
+	inline-size: 40px !important;
+	block-size: 40px !important;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.mj-wc-al-header__title {
+	margin-block: 0 4px;
+	margin-inline: 0;
+	font-size: 22px;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1.2;
+}
+
+.mj-wc-al-header__subtitle {
+	margin: 0;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+/* =====================================================================
+   BUTTONS
+   ===================================================================== */
+.mj-wc-al-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding-block: 10px;
+	padding-inline: 20px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	border: 2px solid transparent;
+	text-decoration: none;
+	transition: background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.1s ease;
+	line-height: 1;
+}
+
+.mj-wc-al-btn .dashicons {
+	font-size: 16px;
+	inline-size: 16px;
+	block-size: 16px;
+	margin: 0;
+}
+
+.mj-wc-al-btn--primary {
+	background: #7c3aed;
+	color: #fff;
+	border-color: #7c3aed;
+}
+
+.mj-wc-al-btn--primary:hover,
+.mj-wc-al-btn--primary:focus {
+	background: #6d28d9;
+	border-color: #6d28d9;
+	color: #fff;
+	box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+	transform: translateY(-1px);
+	outline: none;
+}
+
+.mj-wc-al-btn--ghost {
+	background: rgba(255, 255, 255, 0.15);
+	color: #fff;
+	border-color: rgba(255, 255, 255, 0.45);
+	backdrop-filter: blur(4px);
+}
+
+.mj-wc-al-btn--ghost:hover,
+.mj-wc-al-btn--ghost:focus {
+	background: rgba(255, 255, 255, 0.28);
+	border-color: rgba(255, 255, 255, 0.7);
+	color: #fff;
+	outline: none;
+}
+
+/* =====================================================================
+   CARD
+   ===================================================================== */
+.mj-wc-al-card {
+	background: #fff;
+	border: 1px solid #e0e0e0;
+	border-radius: 12px;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+	overflow: hidden;
+}
+
+/* =====================================================================
+   TABLE HEADER ROW
+   ===================================================================== */
+.mj-wc-al-table-header {
+	display: flex;
+	align-items: center;
+	padding-block: 12px;
+	padding-inline: 20px;
+	background: #f8f9fa;
+	border-block-end: 1px solid #e0e0e0;
+}
+
+.mj-wc-al-table-header .mj-wc-al-col {
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: #6b7280;
+}
+
+/* =====================================================================
+   COLUMNS
+   ===================================================================== */
+.mj-wc-al-col {
+	display: flex;
+	align-items: center;
+}
+
+.mj-wc-al-col--drag {
+	flex: 0 0 40px;
+}
+
+.mj-wc-al-col--enabled {
+	flex: 0 0 80px;
+}
+
+.mj-wc-al-col--slug {
+	flex: 0 0 310px;
+}
+
+.mj-wc-al-col--label {
+	flex: 1 1 auto;
+	min-inline-size: 140px;
+}
+
+.mj-wc-al-col--default {
+	flex: 0 0 180px;
+}
+
+.mj-wc-al-col--actions {
+	flex: 0 0 60px;
+	justify-content: center;
+}
+
+/* =====================================================================
+   SORTABLE LIST
+   ===================================================================== */
+.mj-wc-al-sortable {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* =====================================================================
+   INDIVIDUAL ITEM ROW
+   ===================================================================== */
+.mj-wc-al-item {
+	display: flex;
+	align-items: center;
+	padding-block: 14px;
+	padding-inline: 20px;
+	border-block-end: 1px solid #f0f0f0;
+	background: #fff;
+	transition: background 0.15s ease, box-shadow 0.15s ease;
+	gap: 0;
+}
+
+.mj-wc-al-item:last-child {
+	border-block-end: none;
+}
+
+.mj-wc-al-item:hover {
+	background: #fafafa;
+}
+
+/* Disabled state */
+.mj-wc-al-item--disabled {
+	opacity: 0.55;
+}
+
+/* Drag active (applied by jQuery UI) */
+.mj-wc-al-item.ui-sortable-helper {
+	background: #f5f0ff;
+	box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+	border-radius: 8px;
+	border: 1px solid #c4b5fd;
+	opacity: 1 !important;
+}
+
+/* Placeholder ghost */
+.mj-wc-al-sortable .ui-sortable-placeholder {
+	background: #f3f0ff;
+	border: 2px dashed #c4b5fd;
+	border-radius: 8px;
+	visibility: visible !important;
+	block-size: 60px;
+	margin-block: 4px;
+	margin-inline: 8px;
+}
+
+/* =====================================================================
+   DRAG HANDLE
+   ===================================================================== */
+.mj-drag-handle {
+	cursor: grab;
+	color: #9ca3af;
+	/* Spacing between the handle and the next column, in reading direction */
+	padding-inline-end: 8px;
+	transition: color 0.15s ease;
+}
+
+.mj-drag-handle:active {
+	cursor: grabbing;
+}
+
+.mj-drag-handle:hover {
+	color: #7c3aed;
+}
+
+.mj-drag-handle .dashicons {
+	font-size: 20px;
+	inline-size: 20px;
+	block-size: 20px;
+}
+
+/* =====================================================================
+   TOGGLE SWITCH
+   ===================================================================== */
+.mj-toggle {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.mj-toggle__input {
+	position: absolute;
+	opacity: 0;
+	inline-size: 0;
+	block-size: 0;
+	pointer-events: none;
+}
+
+.mj-toggle__track {
+	position: relative;
+	display: inline-block;
+	inline-size: 44px;
+	block-size: 24px;
+	background: #d1d5db;
+	border-radius: 12px;
+	transition: background 0.22s ease;
+}
+
+.mj-toggle__thumb {
+	position: absolute;
+	inset-block-start: 3px;
+	/*
+	 * inset-inline-start resolves to "left" in LTR and "right" in RTL,
+	 * so the thumb naturally sits at the start edge in both directions.
+	 * No [dir="rtl"] override needed.
+	 */
+	inset-inline-start: 3px;
+	inline-size: 18px;
+	block-size: 18px;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+	transition: transform 0.22s ease;
+}
+
+.mj-toggle__input:checked ~ .mj-toggle__track {
+	background: #7c3aed;
+}
+
+/*
+ * Slide the thumb toward inline-end when checked.
+ * In LTR this is rightward (+20 px); in RTL the browser's logical
+ * transform maps it leftward automatically because inset-inline-start
+ * is already anchored to the RTL start edge (right side).
+ * We therefore keep a single positive translateX() for both directions.
+ */
+.mj-toggle__input:checked ~ .mj-toggle__track .mj-toggle__thumb {
+	transform: translateX(20px);
+}
+
+/* Mirror the slide direction in RTL using the :dir() pseudo-class.
+   :dir() is the standards-track logical alternative to [dir="rtl"]. */
+:dir(rtl) .mj-toggle__input:checked ~ .mj-toggle__track .mj-toggle__thumb {
+	transform: translateX(-20px);
+}
+
+.mj-toggle__input:focus ~ .mj-toggle__track {
+	outline: 2px solid #7c3aed;
+	outline-offset: 2px;
+}
+
+/* =====================================================================
+   SLUG BADGE
+   ===================================================================== */
+.mj-slug-badge {
+	display: inline-block;
+	background: #f3f4f6;
+	color: #374151;
+	font-size: 11px;
+	padding-block: 3px;
+	padding-inline: 8px;
+	border-radius: 6px;
+	border: 1px solid #e5e7eb;
+	white-space: nowrap;
+	max-inline-size: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* =====================================================================
+   LABEL INPUT
+   ===================================================================== */
+.mj-label-input {
+	inline-size: 100%;
+	max-inline-size: 260px;
+	padding-block: 8px;
+	padding-inline: 12px;
+	border: 1.5px solid #e0e0e0;
+	border-radius: 8px;
+	font-size: 13px;
+	color: #1d2327;
+	background: #fff;
+	transition: border-color 0.18s ease, box-shadow 0.18s ease;
+	outline: none;
+}
+
+.mj-label-input:hover {
+	border-color: #a78bfa;
+}
+
+.mj-label-input:focus {
+	border-color: #7c3aed;
+	box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.mj-label-input::placeholder {
+	color: #9ca3af;
+	font-style: italic;
+}
+
+/* =====================================================================
+   DEFAULT LABEL
+   ===================================================================== */
+.mj-default-label {
+	font-size: 13px;
+	color: #6b7280;
+}
+
+/* =====================================================================
+   RESET ITEM BUTTON
+   ===================================================================== */
+.mj-btn-reset-item.button.button-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-block: 6px;
+	padding-inline: 8px;
+	min-inline-size: unset;
+	border-radius: 6px;
+	border-color: #e0e0e0;
+	color: #6b7280;
+	block-size: auto;
+	line-height: 1;
+	transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.mj-btn-reset-item.button.button-secondary:hover {
+	background: #f3f0ff;
+	border-color: #c4b5fd;
+	color: #7c3aed;
+}
+
+.mj-btn-reset-item .dashicons {
+	font-size: 16px;
+	inline-size: 16px;
+	block-size: 16px;
+	margin: 0;
+}
+
+/* =====================================================================
+   EMPTY STATE
+   ===================================================================== */
+.mj-wc-al-empty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding-block: 40px;
+	padding-inline: 20px;
+	color: #6b7280;
+	font-size: 14px;
+}
+
+.mj-wc-al-empty .dashicons {
+	font-size: 24px;
+	inline-size: 24px;
+	block-size: 24px;
+	color: #a78bfa;
+}
+
+/* =====================================================================
+   STICKY SAVE BAR
+   ===================================================================== */
+.mj-wc-al-save-bar {
+	position: fixed;
+	inset-block-end: 0;
+	/*
+	 * inset-inline-start resolves to "left" in LTR and "right" in RTL.
+	 * The WP admin sidebar sits at the inline-start edge in both directions,
+	 * so a single inset-inline-start value handles both without any RTL block.
+	 */
+	inset-inline-start: 160px; /* WP admin sidebar width */
+	inset-inline-end: 0;
+	z-index: 100;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(8px);
+	border-block-start: 1px solid #e0e0e0;
+	box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Collapsed sidebar */
+.folded .mj-wc-al-save-bar {
+	inset-inline-start: 36px;
+}
+
+.mj-wc-al-save-bar__inner {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding-block: 12px;
+	padding-inline: 24px;
+}
+
+.mj-wc-al-save-bar__hint {
+	color: #a78bfa;
+	font-size: 18px;
+	inline-size: 18px;
+	block-size: 18px;
+	flex-shrink: 0;
+}
+
+.mj-wc-al-save-bar__text {
+	font-size: 13px;
+	color: #6b7280;
+	flex: 1;
+}
+
+/* =====================================================================
+   RESPONSIVE ADJUSTMENTS
+   ===================================================================== */
+@media screen and (max-width: 900px) {
+	.mj-wc-al-col--default {
+		display: none;
+	}
+
+	.mj-wc-al-col--slug {
+		flex: 0 0 120px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.mj-wc-al-header__inner {
+		padding-block: 18px;
+		padding-inline: 20px;
+	}
+
+	.mj-wc-al-item {
+		padding-block: 12px;
+		padding-inline: 12px;
+	}
+
+	.mj-wc-al-col--slug {
+		display: none;
+	}
+
+	/* Sidebar is off-screen at mobile — bar spans the full viewport */
+	.mj-wc-al-save-bar {
+		inset-inline-start: 0;
+		inset-inline-end: 0;
+	}
+
+	.mj-wc-al-save-bar__text {
+		display: none;
+	}
+}
