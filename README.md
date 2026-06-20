@@ -22,9 +22,8 @@
 
 ## Screenshots
 
-| Settings page | Item controls |
-|---|---|
-| Drag-and-drop sortable list with toggle switches | Custom label input, default label reference, per-item reset |
+<img width="1920" height="1080" alt="screenshot-1" src="https://github.com/user-attachments/assets/6ab2938e-2fc5-4da3-91b5-11f488e3c5b9" />
+
 
 ---
 
