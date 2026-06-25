@@ -1,7 +1,7 @@
-=== WC My Account Links ===
+=== My Account Links ===
 Contributors:      mjkhajeh
 Tags:              woocommerce, my account, navigation, menu, links
-Requires at least: 5.8
+Requires at least: 6.0
 Tested up to:      7.0
 Requires PHP:      7.4
 Stable tag:        1.0.0.0
@@ -12,7 +12,7 @@ Remove, rename, and reorder WooCommerce My Account navigation links from a polis
 
 == Description ==
 
-**WC My Account Links** gives store administrators full control over the navigation
+**My Account Links** gives store administrators full control over the navigation
 items displayed in WooCommerce's My Account section.
 
 **Features:**
@@ -26,7 +26,7 @@ items displayed in WooCommerce's My Account section.
 
 == Installation ==
 
-1. Upload the `wc-my-account-links` folder to the `/wp-content/plugins/` directory,
+1. Upload the `my-account-links` folder to the `/wp-content/plugins/` directory,
    OR install it via **Plugins → Add New → Upload Plugin** in the WordPress admin.
 2. Activate the plugin through the **Plugins** menu in WordPress.
 3. Navigate to **WooCommerce → My Account Links** to configure the navigation items.
@@ -73,23 +73,6 @@ or hidden like any other item.
 Initial release — no upgrade steps required.
 
 == Developer Notes ==
-
-**Plugin structure:**
-
-```
-wc-my-account-links/
-├── wc-my-account-links.php   Main plugin file / entry point
-├── readme.txt                         This file
-├── assets/
-│   ├── css/
-│   │   └── admin.css                  Admin settings page styles
-│   └── js/
-│       └── admin.js                   Drag-and-drop & UI logic
-├── includes/
-│   ├── class-mj-wc-account-links.php         Core class (singleton, frontend filter)
-│   └── class-mj-wc-account-links-admin.php   Admin class (page, save, reset)
-└── languages/                         Translation files (.pot / .mo / .po)
-```
 
 **Hooks used:**
 

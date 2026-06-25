@@ -1,4 +1,4 @@
-# WC My Account Links
+# My Account Links
 
 > Remove, rename, and reorder WooCommerce My Account navigation links from a polished admin UI.
 
@@ -42,13 +42,13 @@
 **Via WordPress admin (recommended)**
 
 1. Go to **Plugins → Add New → Upload Plugin**
-2. Upload the `wc-my-account-links.zip` file
+2. Upload the `my-account-links.zip` file
 3. Click **Install Now**, then **Activate**
 
 **Manual install**
 
 1. Clone or download this repository
-2. Copy the `wc-my-account-links` folder to `/wp-content/plugins/`
+2. Copy the `my-account-links` folder to `/wp-content/plugins/`
 3. Activate the plugin through the **Plugins** menu in WordPress
 
 Once activated, navigate to **WooCommerce → My Account Links** to configure the navigation.
@@ -86,21 +86,6 @@ Settings are stored in the WordPress Options table under the key `mj_wc_account_
     }
   }
 }
-```
-
----
-
-## Project Structure
-
-```
-wc-my-account-links/
-├── woocommerce-my-account-links.php        Entry point, constants, Init class
-├── class-mj-wc-account-links.php           Core singleton — frontend filter & settings helpers
-├── class-mj-wc-account-links-admin.php     Admin page, save/reset handlers, notices
-├── admin.js                                Drag-and-drop, toggle state, label reset, form submit
-├── admin.css                               Admin UI styles (responsive, RTL-aware)
-├── composer.json                           PSR-4 autoload config
-└── readme.txt                              WordPress.org plugin readme
 ```
 
 ---
@@ -155,4 +140,4 @@ Licensed under the [GNU General Public License v2.0 or later](https://www.gnu.or
 ## Author
 
 **MohammadJafar Khajeh** — [mjkhajeh.ir](https://mjkhajeh.ir)  
-Plugin page: [wordpress.org/plugins/wc-my-account-links](https://wordpress.org/plugins/wc-my-account-links/)
+Plugin page: [wordpress.org/plugins/my-account-links](https://wordpress.org/plugins/my-account-links/)

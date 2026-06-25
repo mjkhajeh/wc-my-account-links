@@ -7,8 +7,7 @@
  *  3. Toggle switch row-level disabled visual state.
  *  4. Per-item label reset button.
  *  5. Global "Reset All" confirmation dialog.
- *
- * @package mj-wc-account-links
+ * 
  */
 
 /* global mjWcAccountLinks, jQuery */

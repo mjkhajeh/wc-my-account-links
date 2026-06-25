@@ -374,9 +374,6 @@ class Admin {
 				);
 			}
 		}
-
-		$form_action_save  = esc_url( admin_url( 'admin-post.php' ) );
-		$form_action_reset = esc_url( admin_url( 'admin-post.php' ) );
 		?>
 		<div class="wrap mj-wc-al-wrap">
 
@@ -393,7 +390,7 @@ class Admin {
 					</div>
 
 					<!-- Reset all form -->
-					<form method="post" action="<?php echo $form_action_reset; ?>" id="mj-reset-form">
+					<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" id="mj-reset-form">
 						<input type="hidden" name="action" value="mj_MY_Account_Links_reset">
 						<?php wp_nonce_field( self::NONCE_ACTION_RESET, self::NONCE_NAME ); ?>
 						<button type="submit" class="mj-wc-al-btn mj-wc-al-btn--ghost" id="mj-btn-reset-all">
@@ -405,7 +402,7 @@ class Admin {
 			</div>
 
 			<!-- Main settings form -->
-			<form method="post" action="<?php echo $form_action_save; ?>" id="mj-settings-form">
+			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>" id="mj-settings-form">
 				<input type="hidden" name="action" value="mj_MY_Account_Links_save">
 				<?php wp_nonce_field( self::NONCE_ACTION_SAVE, self::NONCE_NAME ); ?>
 
@@ -482,12 +479,9 @@ class Admin {
 	 */
 	private function render_item_row( string $slug, array $item ) {
 		$enabled       = (bool) $item['enabled'];
-		$custom_label  = esc_attr( $item['label'] ?? '' );
-		$default_label = esc_html( $item['default_label'] ?? $slug );
-		$safe_slug     = esc_attr( $slug );
 		$row_class     = $enabled ? 'mj-wc-al-item' : 'mj-wc-al-item mj-wc-al-item--disabled';
 		?>
-		<li class="<?php echo esc_attr( $row_class ); ?>" data-slug="<?php echo $safe_slug; ?>">
+		<li class="<?php echo esc_attr( $row_class ); ?>" data-slug="<?php echo esc_attr( $slug ); ?>">
 
 			<!-- Drag handle -->
 			<span class="mj-wc-al-col mj-wc-al-col--drag mj-drag-handle" title="<?php esc_attr_e( 'Drag to reorder', 'my-account-links' ); ?>">
@@ -499,7 +493,7 @@ class Admin {
 				<label class="mj-toggle" aria-label="<?php esc_attr_e( 'Enable item', 'my-account-links' ); ?>">
 					<input
 						type="checkbox"
-						name="mj_items[<?php echo $safe_slug; ?>][enabled]"
+						name="mj_items[<?php echo esc_attr( $slug ); ?>][enabled]"
 						value="1"
 						class="mj-toggle__input"
 						<?php checked( $enabled, true ); ?>
@@ -519,17 +513,17 @@ class Admin {
 			<span class="mj-wc-al-col mj-wc-al-col--label">
 				<input
 					type="text"
-					name="mj_items[<?php echo $safe_slug; ?>][label]"
-					value="<?php echo $custom_label; ?>"
+					name="mj_items[<?php echo esc_attr( $slug ); ?>][label]"
+					value="<?php echo esc_attr( $item['label'] ?? '' ); ?>"
 					class="mj-label-input"
-					placeholder="<?php echo $default_label; ?>"
+					placeholder="<?php echo esc_html( $item['default_label'] ?? $slug ); ?>"
 					aria-label="<?php esc_attr_e( 'Custom label', 'my-account-links' ); ?>"
 				>
 			</span>
 
 			<!-- WooCommerce default label (read-only) -->
 			<span class="mj-wc-al-col mj-wc-al-col--default">
-				<span class="mj-default-label"><?php echo $default_label; ?></span>
+				<span class="mj-default-label"><?php echo esc_html( $item['default_label'] ?? $slug ); ?></span>
 			</span>
 
 			<!-- Reset individual item label -->
@@ -537,7 +531,7 @@ class Admin {
 				<button
 					type="button"
 					class="mj-btn-reset-item button button-secondary"
-					data-default="<?php echo $default_label; ?>"
+					data-default="<?php echo esc_html( $item['default_label'] ?? $slug ); ?>"
 					title="<?php esc_attr_e( 'Reset to WooCommerce default label', 'my-account-links' ); ?>"
 				>
 					<span class="dashicons dashicons-image-rotate"></span>
