@@ -1,0 +1,180 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: My Account Links\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-25 08:37+0000\n"
+"PO-Revision-Date: 2026-06-25 08:45+0000\n"
+"Last-Translator: دکتر پلاس\n"
+"Language-Team: فارسی\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.5; wp-7.0; php-8.3.30\n"
+"X-Domain: my-account-links"
+
+#. %s: plugin name
+#: my-account-links.php:133
+msgid ""
+"<strong>My Account Links</strong> requires WooCommerce to be installed and "
+"active. Please install or activate WooCommerce to use this plugin."
+msgstr ""
+"<strong>لینک‌های حساب کاربری</strong> به ووکامرس نیاز دارد. لطفا از بخش "
+"افزونه‌ها، ووکامرس را نصب و فعال‌سازی کنید."
+
+#: Includes/Admin.php:430
+msgid "Actions"
+msgstr "عملیات‌ها"
+
+#: Includes/Admin.php:261
+msgid ""
+"All customisations have been cleared. WooCommerce default My Account "
+"navigation is now restored."
+msgstr "تمام شخصی‌سازی‌ها به حذف شدند. منو حساب کاربری به حالت پیشفرض برگشت."
+
+#: Includes/Admin.php:116
+msgid ""
+"Are you sure you want to reset all settings to WooCommerce defaults? This "
+"cannot be undone."
+msgstr "آیا از بازنشانی تمام تنظیمات اطمینان دارید؟ این عمل غیرقابل برگشت است."
+
+#: Includes/Admin.php:391
+msgid "Control the navigation links shown in WooCommerce My Account pages."
+msgstr "کنترل و لینک‌های منو حساب کاربری ووکامرس."
+
+#: Includes/Admin.php:424
+msgid "Custom Label"
+msgstr "عنوان دلخواه"
+
+#: Includes/Admin.php:526
+msgid "Custom label"
+msgstr "عنوان دلخواه"
+
+#: Includes/Admin.php:322
+msgid "Dismiss this notice"
+msgstr "حذف پیام"
+
+#: Includes/Admin.php:458
+msgid ""
+"Drag rows to reorder. Toggle the switch to show/hide items. Enter a custom "
+"label to rename."
+msgstr ""
+"برای مشخص کردن جایگاه هر آیتم، آن را گرفته و در جای مناسب قرار دهید. برای "
+"نمایش یا مخفی سازی هر آیتم از سوییچ استفاده کنید. برای تغییر عنوان می‌توانید "
+"عنوان را در فیلد مربوطه وارد کنید."
+
+#: Includes/Admin.php:117 Includes/Admin.php:493
+msgid "Drag to reorder"
+msgstr "برای مرتب سازی بکشید"
+
+#: Includes/Admin.php:499
+msgid "Enable item"
+msgstr "فعال‌سازی آیتم"
+
+#: Includes/Admin.php:421
+msgid "Endpoint"
+msgstr "نقطه پایانی"
+
+#: my-account-links.php:176
+msgid "Go to Plugins"
+msgstr "رفتن به افزونه‌ها"
+
+#. Author URI of the plugin
+msgid "https://mjkhajeh.ir"
+msgstr "https://mjkhajeh.ir"
+
+#. URI of the plugin
+msgid "https://wordpress.org/plugins/my-account-links/"
+msgstr "https://wordpress.org/plugins/my-account-links/"
+
+#: my-account-links.php:159
+msgid "Install WooCommerce"
+msgstr "نصب ووکامرس"
+
+#. Author of the plugin
+msgid "MohammadJafar Khajeh"
+msgstr "محمدجعفر خواجه"
+
+#. Name of the plugin
+#: Includes/Admin.php:69 Includes/Admin.php:70 Includes/Admin.php:388
+msgid "My Account Links"
+msgstr "لینک‌های حساب کاربری"
+
+#: Includes/Admin.php:443
+msgid ""
+"No WooCommerce My Account menu items found. Make sure WooCommerce is fully "
+"configured."
+msgstr ""
+"هیچ لینکی در منو حساب کاربری یافت نشد. لطفا تنظیمات ووکامرس را بررسی کنید."
+
+#. Description of the plugin
+msgid "Remove, rename, and reorder WooCommerce My Account navigation links."
+msgstr "حذف، تغییر نام و مرتب‌سازی لینک‌های منوی حساب کاربری ووکامرس."
+
+#: Includes/Admin.php:401
+msgid "Reset All Defaults"
+msgstr "بازنشانی همه تنظیمات"
+
+#: Includes/Admin.php:544
+msgid "Reset label"
+msgstr "بازنشانی عنوان"
+
+#: Includes/Admin.php:541
+msgid "Reset to WooCommerce default label"
+msgstr "بازنشانی عنوان به پیشفرض ووکامرس"
+
+#: Includes/Admin.php:250
+msgid "Save failed"
+msgstr "ذخیره با خطا مواجه شد"
+
+#: Includes/Admin.php:462
+msgid "Save Settings"
+msgstr "ذخیره تنظیمات"
+
+#: Includes/Admin.php:143 Includes/Admin.php:203
+msgid "Security check failed. Please try again."
+msgstr "خطا امنیتی. لطفا مجدد تلاش کنید."
+
+#: Includes/Admin.php:260
+msgid "Settings reset"
+msgstr "تنظیمات بازنشانی شد"
+
+#: Includes/Admin.php:243
+msgid "Settings saved"
+msgstr "تنظیمات ذخیره شد"
+
+#: Includes/Admin.php:251
+msgid ""
+"There was a problem saving your settings. Please try again. If the issue "
+"persists, check your server error log."
+msgstr ""
+"در ذخیره تنظمیات شما خطایی رخ داد. لطفا مجدد تلاش کنید. اگر باز هم با خطا "
+"مواجه شد، لطفا لاگ‌های سرور را بررسی کنید."
+
+#: Includes/Admin.php:418
+msgid "Visible"
+msgstr "نمایان"
+
+#: Includes/Admin.php:427
+msgid "WooCommerce Default"
+msgstr "پیشفرض ووکامرس"
+
+#: my-account-links.php:126
+msgid "WooCommerce is required"
+msgstr "ووکامرس نیاز است"
+
+#: Includes/Admin.php:343
+msgid "You do not have permission to access this page."
+msgstr "شما اجازه دسترسی به این صفحه را ندارید."
+
+#: Includes/Admin.php:135 Includes/Admin.php:196
+msgid "You do not have permission to perform this action."
+msgstr "شما اجازه انجام این عملیات را ندارید."
+
+#: Includes/Admin.php:244
+msgid ""
+"Your My Account navigation has been updated and is now live on the frontend."
+msgstr ""
+"تنظیمات شما بروزرسانی شد. می‌توانید نتیجه را در صفحه حساب کاربری مشاهده کنید."

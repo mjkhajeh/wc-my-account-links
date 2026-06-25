@@ -5,10 +5,10 @@
  * Bootstraps the plugin, applies the WooCommerce menu filter on the frontend,
  * and exposes shared helper methods used by the admin class.
  *
- * @package MJ_WC_Account_Links
+ * @package MJ_MY_ACCOUNT_LINKS
  */
 
-namespace MJ\WC_Account_Links;
+namespace MJ\MyAccountLinks;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class MJ_WC_Account_Links
+ * Class MJ_MY_ACCOUNT_LINKS
  */
 class Core {
 
@@ -140,7 +140,7 @@ class Core {
 	 */
 	public function get_settings(): array {
 		if ( null === $this->settings ) {
-			$raw            = get_option( MJ_WC_ACCOUNT_LINKS_OPTION, array() );
+			$raw            = get_option( 'my_account_links_settings', array() );
 			$this->settings = is_array( $raw ) ? $raw : array();
 		}
 		return $this->settings;
@@ -154,7 +154,7 @@ class Core {
 	 */
 	public function save_settings( array $settings ): bool {
 		$this->settings = null; // Clear cache.
-		return update_option( MJ_WC_ACCOUNT_LINKS_OPTION, $settings );
+		return update_option( 'my_account_links_settings', $settings );
 	}
 
 	/**
@@ -164,7 +164,7 @@ class Core {
 	 */
 	public function delete_settings(): bool {
 		$this->settings = null;
-		return delete_option( MJ_WC_ACCOUNT_LINKS_OPTION );
+		return delete_option( 'my_account_links_settings' );
 	}
 
 	/**

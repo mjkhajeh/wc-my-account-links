@@ -8,10 +8,10 @@
  *  - Renders the sortable UI.
  *  - Processes save / reset form submissions.
  *
- * @package MJ_WC_Account_Links
+ * @package MJ_MY_ACCOUNT_LINKS
  */
 
-namespace MJ\WC_Account_Links;
+namespace MJ\MyAccountLinks;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,7 +23,7 @@ class Admin {
 	/**
 	 * Reference to the core plugin instance.
 	 *
-	 * @var MJ_WC_Account_Links
+	 * @var MJ_MY_ACCOUNT_LINKS
 	 */
 	private $plugin;
 
@@ -37,9 +37,9 @@ class Admin {
 	/**
 	 * Nonce action / name constants.
 	 */
-	const NONCE_ACTION_SAVE  = 'mj_wc_account_links_save';
-	const NONCE_ACTION_RESET = 'mj_wc_account_links_reset';
-	const NONCE_NAME         = 'mj_wc_account_links_nonce';
+	const NONCE_ACTION_SAVE  = 'mj_MY_Account_Links_save';
+	const NONCE_ACTION_RESET = 'mj_MY_Account_Links_reset';
+	const NONCE_NAME         = 'mj_MY_Account_Links_nonce';
 
 	public function __construct( $plugin ) {
 		$this->plugin = $plugin;
@@ -51,8 +51,8 @@ class Admin {
 	public function hooks() {
 		add_action( 'admin_menu', array( $this, 'register_menu' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_assets' ) );
-		add_action( 'admin_post_mj_wc_account_links_save', array( $this, 'handle_save' ) );
-		add_action( 'admin_post_mj_wc_account_links_reset', array( $this, 'handle_reset' ) );
+		add_action( 'admin_post_mj_MY_Account_Links_save', array( $this, 'handle_save' ) );
+		add_action( 'admin_post_mj_MY_Account_Links_reset', array( $this, 'handle_reset' ) );
 		add_action( 'admin_notices', array( $this, 'display_admin_notices' ) );
 	}
 
@@ -66,10 +66,10 @@ class Admin {
 	public function register_menu() {
 		$this->page_hook = add_submenu_page(
 			'woocommerce',
-			__( 'My Account Links', 'wc-account-links' ),
-			__( 'My Account Links', 'wc-account-links' ),
+			__( 'My Account Links', 'my-account-links' ),
+			__( 'My Account Links', 'my-account-links' ),
 			'manage_woocommerce',
-			'wc-account-links',
+			'my-account-links',
 			array( $this, 'render_page' )
 		);
 	}
@@ -93,28 +93,28 @@ class Admin {
 
 		// Plugin admin CSS.
 		wp_enqueue_style(
-			'mj-wc-account-links-admin',
-			MJ_WC_ACCOUNT_LINKS_URL . 'assets/css/admin.css',
+			'mj-my-account-links-admin',
+			MJ_MY_ACCOUNT_LINKS_URL . 'assets/css/admin.css',
 			array(),
-			MJ_WC_ACCOUNT_LINKS_VERSION
+			MJ_MY_ACCOUNT_LINKS_VERSION
 		);
 
 		// Plugin admin JS.
 		wp_enqueue_script(
-			'mj-wc-account-links-admin',
-			MJ_WC_ACCOUNT_LINKS_URL . 'assets/js/admin.js',
+			'mj-my-account-links-admin',
+			MJ_MY_ACCOUNT_LINKS_URL . 'assets/js/admin.js',
 			array( 'jquery', 'jquery-ui-sortable' ),
-			MJ_WC_ACCOUNT_LINKS_VERSION,
+			MJ_MY_ACCOUNT_LINKS_VERSION,
 			true
 		);
 
 		// Pass translated strings and other data to JS.
 		wp_localize_script(
-			'mj-wc-account-links-admin',
+			'mj-my-account-links-admin',
 			'mjWcAccountLinks',
 			array(
-				'confirmReset' => __( 'Are you sure you want to reset all settings to WooCommerce defaults? This cannot be undone.', 'wc-account-links' ),
-				'dragHandle'   => __( 'Drag to reorder', 'wc-account-links' ),
+				'confirmReset' => __( 'Are you sure you want to reset all settings to WooCommerce defaults? This cannot be undone.', 'my-account-links' ),
+				'dragHandle'   => __( 'Drag to reorder', 'my-account-links' ),
 			)
 		);
 	}
@@ -132,7 +132,7 @@ class Admin {
 	public function handle_save() {
 		// Capability check.
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
-			wp_die( esc_html__( 'You do not have permission to perform this action.', 'wc-account-links' ) );
+			wp_die( esc_html__( 'You do not have permission to perform this action.', 'my-account-links' ) );
 		}
 
 		// Nonce verification.
@@ -140,7 +140,7 @@ class Admin {
 			! isset( $_POST[ self::NONCE_NAME ] ) ||
 			! wp_verify_nonce( sanitize_key( $_POST[ self::NONCE_NAME ] ), self::NONCE_ACTION_SAVE )
 		) {
-			wp_die( esc_html__( 'Security check failed. Please try again.', 'wc-account-links' ) );
+			wp_die( esc_html__( 'Security check failed. Please try again.', 'my-account-links' ) );
 		}
 
 		// Sanitize submitted items.
@@ -176,7 +176,7 @@ class Admin {
 
 		$redirect = add_query_arg(
 			array(
-				'page'              => 'wc-account-links',
+				'page'              => 'my-account-links',
 				'mj_wc_al_updated' => $result ? '1' : '0',
 			),
 			admin_url( 'admin.php' )
@@ -193,14 +193,14 @@ class Admin {
 	 */
 	public function handle_reset() {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
-			wp_die( esc_html__( 'You do not have permission to perform this action.', 'wc-account-links' ) );
+			wp_die( esc_html__( 'You do not have permission to perform this action.', 'my-account-links' ) );
 		}
 
 		if (
 			! isset( $_POST[ self::NONCE_NAME ] ) ||
 			! wp_verify_nonce( sanitize_key( $_POST[ self::NONCE_NAME ] ), self::NONCE_ACTION_RESET )
 		) {
-			wp_die( esc_html__( 'Security check failed. Please try again.', 'wc-account-links' ) );
+			wp_die( esc_html__( 'Security check failed. Please try again.', 'my-account-links' ) );
 		}
 
 		$this->plugin->delete_settings();
@@ -208,7 +208,7 @@ class Admin {
 		wp_safe_redirect(
 			add_query_arg(
 				array(
-					'page'            => 'wc-account-links',
+					'page'            => 'my-account-links',
 					'mj_wc_al_reset'  => '1',
 				),
 				admin_url( 'admin.php' )
@@ -240,15 +240,15 @@ class Admin {
 			if ( '1' === $_GET['mj_wc_al_updated'] ) {
 				$this->render_notice(
 					'success',
-					__( 'Settings saved', 'wc-account-links' ),
-					__( 'Your My Account navigation has been updated and is now live on the frontend.', 'wc-account-links' ),
+					__( 'Settings saved', 'my-account-links' ),
+					__( 'Your My Account navigation has been updated and is now live on the frontend.', 'my-account-links' ),
 					'dashicons-yes-alt'
 				);
 			} else {
 				$this->render_notice(
 					'error',
-					__( 'Save failed', 'wc-account-links' ),
-					__( 'There was a problem saving your settings. Please try again. If the issue persists, check your server error log.', 'wc-account-links' ),
+					__( 'Save failed', 'my-account-links' ),
+					__( 'There was a problem saving your settings. Please try again. If the issue persists, check your server error log.', 'my-account-links' ),
 					'dashicons-dismiss'
 				);
 			}
@@ -257,8 +257,8 @@ class Admin {
 		if ( isset( $_GET['mj_wc_al_reset'] ) && '1' === $_GET['mj_wc_al_reset'] ) {
 			$this->render_notice(
 				'info',
-				__( 'Settings reset', 'wc-account-links' ),
-				__( 'All customisations have been cleared. WooCommerce default My Account navigation is now restored.', 'wc-account-links' ),
+				__( 'Settings reset', 'my-account-links' ),
+				__( 'All customisations have been cleared. WooCommerce default My Account navigation is now restored.', 'my-account-links' ),
 				'dashicons-image-rotate'
 			);
 		}
@@ -319,7 +319,7 @@ class Admin {
 				<button
 					type="button"
 					onclick="this.closest('[role=alert]').style.display='none'"
-					aria-label="<?php esc_attr_e( 'Dismiss this notice', 'wc-account-links' ); ?>"
+					aria-label="<?php esc_attr_e( 'Dismiss this notice', 'my-account-links' ); ?>"
 					style="display:flex;align-items:center;justify-content:center;inline-size:30px;block-size:30px;background:transparent;border:none;border-radius:6px;cursor:pointer;color:#9ca3af;flex-shrink:0;padding:0;"
 					onmouseover="this.style.background='rgba(0,0,0,0.06)';this.style.color='#374151'"
 					onmouseout="this.style.background='transparent';this.style.color='#9ca3af'"
@@ -340,7 +340,7 @@ class Admin {
 	 */
 	public function render_page() {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
-			wp_die( esc_html__( 'You do not have permission to access this page.', 'wc-account-links' ) );
+			wp_die( esc_html__( 'You do not have permission to access this page.', 'my-account-links' ) );
 		}
 
 		// Fetch the canonical WooCommerce items and the saved config.
@@ -385,20 +385,20 @@ class Admin {
 				<div class="mj-wc-al-header__inner">
 					<div class="mj-wc-al-header__title-group">
 						<h1 class="mj-wc-al-header__title">
-							<?php esc_html_e( 'My Account Links', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'My Account Links', 'my-account-links' ); ?>
 						</h1>
 						<p class="mj-wc-al-header__subtitle">
-							<?php esc_html_e( 'Control the navigation links shown in WooCommerce My Account pages.', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'Control the navigation links shown in WooCommerce My Account pages.', 'my-account-links' ); ?>
 						</p>
 					</div>
 
 					<!-- Reset all form -->
 					<form method="post" action="<?php echo $form_action_reset; ?>" id="mj-reset-form">
-						<input type="hidden" name="action" value="mj_wc_account_links_reset">
+						<input type="hidden" name="action" value="mj_MY_Account_Links_reset">
 						<?php wp_nonce_field( self::NONCE_ACTION_RESET, self::NONCE_NAME ); ?>
 						<button type="submit" class="mj-wc-al-btn mj-wc-al-btn--ghost" id="mj-btn-reset-all">
 							<span class="dashicons dashicons-image-rotate"></span>
-							<?php esc_html_e( 'Reset All Defaults', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'Reset All Defaults', 'my-account-links' ); ?>
 						</button>
 					</form>
 				</div>
@@ -406,7 +406,7 @@ class Admin {
 
 			<!-- Main settings form -->
 			<form method="post" action="<?php echo $form_action_save; ?>" id="mj-settings-form">
-				<input type="hidden" name="action" value="mj_wc_account_links_save">
+				<input type="hidden" name="action" value="mj_MY_Account_Links_save">
 				<?php wp_nonce_field( self::NONCE_ACTION_SAVE, self::NONCE_NAME ); ?>
 
 				<div class="mj-wc-al-card">
@@ -415,19 +415,19 @@ class Admin {
 					<div class="mj-wc-al-table-header">
 						<span class="mj-wc-al-col mj-wc-al-col--drag"></span>
 						<span class="mj-wc-al-col mj-wc-al-col--enabled">
-							<?php esc_html_e( 'Visible', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'Visible', 'my-account-links' ); ?>
 						</span>
 						<span class="mj-wc-al-col mj-wc-al-col--slug">
-							<?php esc_html_e( 'Endpoint', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'Endpoint', 'my-account-links' ); ?>
 						</span>
 						<span class="mj-wc-al-col mj-wc-al-col--label">
-							<?php esc_html_e( 'Custom Label', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'Custom Label', 'my-account-links' ); ?>
 						</span>
 						<span class="mj-wc-al-col mj-wc-al-col--default">
-							<?php esc_html_e( 'WooCommerce Default', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'WooCommerce Default', 'my-account-links' ); ?>
 						</span>
 						<span class="mj-wc-al-col mj-wc-al-col--actions">
-							<?php esc_html_e( 'Actions', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'Actions', 'my-account-links' ); ?>
 						</span>
 					</div>
 
@@ -440,7 +440,7 @@ class Admin {
 						<?php if ( empty( $display_items ) ) : ?>
 							<li class="mj-wc-al-empty">
 								<span class="dashicons dashicons-info-outline"></span>
-								<?php esc_html_e( 'No WooCommerce My Account menu items found. Make sure WooCommerce is fully configured.', 'wc-account-links' ); ?>
+								<?php esc_html_e( 'No WooCommerce My Account menu items found. Make sure WooCommerce is fully configured.', 'my-account-links' ); ?>
 							</li>
 						<?php endif; ?>
 					</ul>
@@ -455,11 +455,11 @@ class Admin {
 					<div class="mj-wc-al-save-bar__inner">
 						<span class="mj-wc-al-save-bar__hint dashicons dashicons-info-outline"></span>
 						<span class="mj-wc-al-save-bar__text">
-							<?php esc_html_e( 'Drag rows to reorder. Toggle the switch to show/hide items. Enter a custom label to rename.', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'Drag rows to reorder. Toggle the switch to show/hide items. Enter a custom label to rename.', 'my-account-links' ); ?>
 						</span>
 						<button type="submit" class="mj-wc-al-btn mj-wc-al-btn--primary">
 							<span class="dashicons dashicons-yes-alt"></span>
-							<?php esc_html_e( 'Save Settings', 'wc-account-links' ); ?>
+							<?php esc_html_e( 'Save Settings', 'my-account-links' ); ?>
 						</button>
 					</div>
 				</div>
@@ -490,13 +490,13 @@ class Admin {
 		<li class="<?php echo esc_attr( $row_class ); ?>" data-slug="<?php echo $safe_slug; ?>">
 
 			<!-- Drag handle -->
-			<span class="mj-wc-al-col mj-wc-al-col--drag mj-drag-handle" title="<?php esc_attr_e( 'Drag to reorder', 'wc-account-links' ); ?>">
+			<span class="mj-wc-al-col mj-wc-al-col--drag mj-drag-handle" title="<?php esc_attr_e( 'Drag to reorder', 'my-account-links' ); ?>">
 				<span class="dashicons dashicons-move"></span>
 			</span>
 
 			<!-- Enable / disable toggle -->
 			<span class="mj-wc-al-col mj-wc-al-col--enabled">
-				<label class="mj-toggle" aria-label="<?php esc_attr_e( 'Enable item', 'wc-account-links' ); ?>">
+				<label class="mj-toggle" aria-label="<?php esc_attr_e( 'Enable item', 'my-account-links' ); ?>">
 					<input
 						type="checkbox"
 						name="mj_items[<?php echo $safe_slug; ?>][enabled]"
@@ -523,7 +523,7 @@ class Admin {
 					value="<?php echo $custom_label; ?>"
 					class="mj-label-input"
 					placeholder="<?php echo $default_label; ?>"
-					aria-label="<?php esc_attr_e( 'Custom label', 'wc-account-links' ); ?>"
+					aria-label="<?php esc_attr_e( 'Custom label', 'my-account-links' ); ?>"
 				>
 			</span>
 
@@ -538,10 +538,10 @@ class Admin {
 					type="button"
 					class="mj-btn-reset-item button button-secondary"
 					data-default="<?php echo $default_label; ?>"
-					title="<?php esc_attr_e( 'Reset to WooCommerce default label', 'wc-account-links' ); ?>"
+					title="<?php esc_attr_e( 'Reset to WooCommerce default label', 'my-account-links' ); ?>"
 				>
 					<span class="dashicons dashicons-image-rotate"></span>
-					<span class="screen-reader-text"><?php esc_html_e( 'Reset label', 'wc-account-links' ); ?></span>
+					<span class="screen-reader-text"><?php esc_html_e( 'Reset label', 'my-account-links' ); ?></span>
 				</button>
 			</span>
 

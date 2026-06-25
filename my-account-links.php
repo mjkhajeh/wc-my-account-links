@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:       WC My Account Links
- * Plugin URI:        https://wordpress.org/plugins/wc-my-account-links/
+ * Plugin Name:       My Account Links
+ * Plugin URI:        https://wordpress.org/plugins/my-account-links/
  * Description:       Remove, rename, and reorder WooCommerce My Account navigation links.
  * Version:           1.0.0.0
  * Requires at least: 6.0
@@ -11,13 +11,13 @@
  * Author URI:        https://mjkhajeh.ir
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       wc-account-links
+ * Text Domain:       my-account-links
  * Domain Path:       /languages
  * Requires Plugins:  woocommerce
  *
  */
 
-namespace MJ\WC_Account_Links;
+namespace MJ\MyAccountLinks;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,11 +25,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin constants.
-define( 'MJ_WC_ACCOUNT_LINKS_VERSION', '1.0.0.0' );
-define( 'MJ_WC_ACCOUNT_LINKS_FILE', __FILE__ );
-define( 'MJ_WC_ACCOUNT_LINKS_PATH', plugin_dir_path( __FILE__ ) );
-define( 'MJ_WC_ACCOUNT_LINKS_URL', plugin_dir_url( __FILE__ ) );
-define( 'MJ_WC_ACCOUNT_LINKS_OPTION', 'mj_wc_account_links_settings' );
+define( 'MJ_MY_ACCOUNT_LINKS_VERSION', '1.0.0.0' );
+define( 'MJ_MY_ACCOUNT_LINKS_FILE', __FILE__ );
+define( 'MJ_MY_ACCOUNT_LINKS_PATH', plugin_dir_path( __FILE__ ) );
+define( 'MJ_MY_ACCOUNT_LINKS_URL', plugin_dir_url( __FILE__ ) );
 
 class Init {
 	/**
@@ -37,7 +36,7 @@ class Init {
 	 */
 	public static function init() {
 		load_plugin_textdomain(
-			'wc-account-links',
+			'my-account-links',
 			false,
 			dirname( plugin_basename( __FILE__ ) ) . '/languages'
 		);
@@ -49,8 +48,8 @@ class Init {
 		}
 
 		// Load core class files.
-		require_once MJ_WC_ACCOUNT_LINKS_PATH . 'includes/class-mj-wc-account-links.php';
-		require_once MJ_WC_ACCOUNT_LINKS_PATH . 'includes/class-mj-wc-account-links-admin.php';
+		require_once MJ_MY_ACCOUNT_LINKS_PATH . 'Includes/Core.php';
+		require_once MJ_MY_ACCOUNT_LINKS_PATH . 'Includes/Admin.php';
 
 		// Boot the plugin singleton.
 		Core::get_instance();
@@ -124,14 +123,14 @@ class Init {
 				<!-- Text -->
 				<div style="flex: 1; min-inline-size: 200px;">
 					<p style="margin: 0 0 4px; font-size: 14px; font-weight: 700; color: #1d2327;">
-						<?php esc_html_e( 'WooCommerce is required', 'wc-account-links' ); ?>
+						<?php esc_html_e( 'WooCommerce is required', 'my-account-links' ); ?>
 					</p>
 					<p style="margin: 0; font-size: 13px; color: #6b7280; line-height: 1.5;">
 						<?php
 						printf(
 							wp_kses(
 								/* translators: %s: plugin name */
-								__( '<strong>WC My Account Links</strong> requires WooCommerce to be installed and active. Please install or activate WooCommerce to use this plugin.', 'wc-account-links' ),
+								__( '<strong>My Account Links</strong> requires WooCommerce to be installed and active. Please install or activate WooCommerce to use this plugin.', 'my-account-links' ),
 								array( 'strong' => array() )
 							)
 						);
@@ -157,7 +156,7 @@ class Init {
 						transition: background .15s;
 					" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
 						<span class="dashicons dashicons-download" style="font-size:15px;inline-size:15px;block-size:15px;margin:0;"></span>
-						<?php esc_html_e( 'Install WooCommerce', 'wc-account-links' ); ?>
+						<?php esc_html_e( 'Install WooCommerce', 'my-account-links' ); ?>
 					</a>
 					<a href="<?php echo esc_url( admin_url( 'plugins.php' ) ); ?>" style="
 						display: inline-flex;
@@ -174,7 +173,7 @@ class Init {
 						border: 1.5px solid #d1d5db;
 					">
 						<span class="dashicons dashicons-admin-plugins" style="font-size:15px;inline-size:15px;block-size:15px;margin:0;"></span>
-						<?php esc_html_e( 'Go to Plugins', 'wc-account-links' ); ?>
+						<?php esc_html_e( 'Go to Plugins', 'my-account-links' ); ?>
 					</a>
 				</div>
 			</div>
